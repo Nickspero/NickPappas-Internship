@@ -9,6 +9,14 @@
 .item{
     padding: 4px;
 }
+.slick-prev{
+    left: -20px;
+    z-index: 2;
+}
+.slick-next{
+    right: -10px;
+    z-index: 2;
+}
 .nft_wrap{
     height: 100%;
     img {
@@ -24,10 +32,10 @@
 
 @media (max-width:576px) {
 .slick-prev:before, .slick-next:before{
-    font-size: 20px;
+    font-size: 25px;
 }
 .slick-prev{
-    left: -6px;
+    left: -14px;
 }
 .slick-next{
     right: -9px;
