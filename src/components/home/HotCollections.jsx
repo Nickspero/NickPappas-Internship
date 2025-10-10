@@ -1,38 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../../css/styles/HotCollections.css"
 
 const HotCollections = () => {
   const [fetchData, setFetchData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const settings = {
-    items: 4,
-    margin: 10,
-    loop: true,
-    nav: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
     dots: false,
     autoplay: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      576: {
-        items: 2,
-      },
-      768: {
-        items: 3,
-      },
-      1200: {
-        items: 4,
-      },
-    },
+    responsive: [
+      { breakpoint: 1200, settings: { slidesToShow: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 576, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
   };
 
   async function getData() {
@@ -58,10 +49,9 @@ const HotCollections = () => {
             </div>
           </div>
 
-          {loading? (
-            <>
-              <OwlCarousel {...settings}>
-                {new Array(4).fill(0).map((item, index) => (
+          <Slider {...settings}>
+            {loading
+              ? new Array(4).fill(0).map((_, index) => (
                   <div className="item" key={index}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
@@ -81,13 +71,8 @@ const HotCollections = () => {
                       </div>
                     </div>
                   </div>
-                ))}
-              </OwlCarousel>
-            </>
-          ) : (
-            <>
-              <OwlCarousel {...settings}>
-                {fetchData.map((item) => (
+                ))
+              : fetchData.map((item) => (
                   <div className="item" key={item.id}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
@@ -118,9 +103,7 @@ const HotCollections = () => {
                     </div>
                   </div>
                 ))}
-              </OwlCarousel>
-            </>
-          )}
+          </Slider>
         </div>
       </div>
     </section>
