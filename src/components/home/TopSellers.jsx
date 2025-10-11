@@ -32,8 +32,8 @@ const TopSellers = () => {
           <div className="col-md-12">
             <ol className="author_list">
               {loading
-                ? new Array(12).fill(0).map((item) => (
-                    <li key={item.id}>
+                ? new Array(12).fill(0).map((item, index) => (
+                    <li key={index}>
                       <div className="author_list_pp">
                         <Skeleton
                           width={50}
