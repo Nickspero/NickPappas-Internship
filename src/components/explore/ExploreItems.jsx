@@ -22,8 +22,6 @@ const ExploreItems = () => {
     getData();
   }, [filterVal]);
 
-  console.log(filterVal)
-
   return (
     <>
       <div>
