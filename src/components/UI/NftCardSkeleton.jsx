@@ -1,9 +1,9 @@
 import React from "react";
 import Skeleton from "./Skeleton";
 
-const NftCardSkeleton = ({skIndex}) => {
+const NftCardSkeleton = () => {
   return (
-    <div className="item" key={skIndex}>
+    <div className="item" >
       <div className="nft__item">
                 <div className="author_list_pp">
                   <Skeleton
@@ -23,6 +23,8 @@ const NftCardSkeleton = ({skIndex}) => {
                 </div>
                 <div className="nft__item_info">
                   <Skeleton width={120} height={20} borderRadius={8}></Skeleton>
+                </div>
+                <div className="nft__item_info">
                   <Skeleton width={60} height={20} borderRadius={8}></Skeleton>
                 </div>
               </div>

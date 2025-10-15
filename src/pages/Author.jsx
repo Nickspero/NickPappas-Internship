@@ -19,6 +19,7 @@ const Author = () => {
   }
 
   useEffect(()=>{
+    window.scrollTo(0, 0);
     getData()
   },[])
 
@@ -39,7 +40,7 @@ const Author = () => {
         <section aria-label="section">
           <div className="container">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-12" data-aos="fade" data-aos-duration="1000">
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
 

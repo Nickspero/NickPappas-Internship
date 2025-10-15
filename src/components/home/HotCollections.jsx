@@ -74,7 +74,7 @@ const HotCollections = () => {
                 ))
               : fetchData.map((item) => (
                   <div className="item" key={item.id}>
-                    <div className="nft_coll">
+                    <div className="nft_coll" data-aos="fade-up">
                       <div className="nft_wrap">
                         <Link to={`/item-details/${item.nftId}`}>
                           <img
