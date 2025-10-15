@@ -34,13 +34,13 @@ const ItemDetails = () => {
               ) : (
                 <>
                   <div className="col-md-6 text-center">
-                    <img
+                    <img 
                       src={itemData.nftImage}
                       className="img-fluid img-rounded mb-sm-30 nft-image"
                       alt=""
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6" >
                     <div className="item_info">
                       <h2>
                         {itemData.title} #{itemData.tag}
@@ -65,7 +65,7 @@ const ItemDetails = () => {
                           <h6>Owner</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Link to="/author">
+                              <Link to={`/author/${itemData.ownerId}`}>
                                 <img
                                   className="lazy"
                                   src={itemData.ownerImage}
@@ -75,7 +75,7 @@ const ItemDetails = () => {
                               </Link>
                             </div>
                             <div className="author_list_info">
-                              <Link to="/author">{itemData.ownerName}</Link>
+                              <Link to={`/author/${itemData.ownerId}`}>{itemData.ownerName}</Link>
                             </div>
                           </div>
                         </div>
@@ -86,7 +86,7 @@ const ItemDetails = () => {
                           <h6>Creator</h6>
                           <div className="item_author">
                             <div className="author_list_pp">
-                              <Link to="/author">
+                              <Link to={`/author/${itemData.creatorId}`}>
                                 <img
                                   className="lazy"
                                   src={itemData.creatorImage}
@@ -96,7 +96,7 @@ const ItemDetails = () => {
                               </Link>
                             </div>
                             <div className="author_list_info">
-                              <Link to="/author">{itemData.creatorName}</Link>
+                              <Link to={`/author/${itemData.creatorId}`}>{itemData.creatorName}</Link>
                             </div>
                           </div>
                         </div>

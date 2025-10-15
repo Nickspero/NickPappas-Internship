@@ -53,8 +53,8 @@ const NewItems = () => {
             {loading
               ? new Array(4)
                   .fill(0)
-                  .map((_, index) => <NftCardSkeleton skIndex={index} />)
-              : newItemData.map((item) => <NftCard data={item} />)}
+                  .map((_, index) => <NftCardSkeleton key={index} />)
+              : newItemData.map((item) => <NftCard key={item.id} data={item} />)}
           </Slider>
         </div>
       </div>

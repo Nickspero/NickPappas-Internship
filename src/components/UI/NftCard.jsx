@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const NftCard = ({data, backupImg}) => {
   return (
-    <div className="item" key={data.id}>
-              <div className="nft__item">
+    <div className="item" >
+              <div className="nft__item" data-aos="fade-up">
                 <div className="author_list_pp">
                   <Link
                     to={`/author/${data.authorId}`}
